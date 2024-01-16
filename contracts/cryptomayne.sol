@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity 0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -17,7 +17,7 @@ contract cryptomayne is ERC721 , Ownable{
         constructor() payable ERC721("cryptomayne", "CM") {
         mintPrice = 0.05 ether;
         maxSupply = 1000;
-        toalSupply = 0;
+        totalSupply = 0;
         maxPerwallet = 10;
         }
 
@@ -28,7 +28,7 @@ contract cryptomayne is ERC721 , Ownable{
             baseTokenURI = baseTokenURI_;
         }
         function tokenURI(uint256 tokenId_) public view override returns (string memory) {
-            return (_exists(tokenId_), 'Token does not exist');
+            require(_exists(tokenId_), 'Token does not exist');
             return string(abi.encodePacked(baseTokenURI, Strings.toString(tokenId_), ".json"));
         }
         function withdraw() external onlyOwner {
@@ -50,6 +50,6 @@ contract cryptomayne is ERC721 , Ownable{
             }
         }
 
-    // gic hereAdd your contract lo
+    
 }
 
