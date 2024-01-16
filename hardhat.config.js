@@ -18,11 +18,11 @@ module.exports = {
   },
   networks: {
     sepolia: {
-      url: process.env.REACTAPP_RPC_URL,
-      accounts: [process.env.REACTAPP_PRIVATEKEYS]
+      url: process.env.REACT_APP_RPC_URL,
+      accounts: [process.env.REACT_APP_PRIVATEKEYS]
     },
   },
   etherscan: {
-    apiKey: process.env.REACTAPP_ETHERSCAN_API_KEY
+    apiKey: process.env.REACT_APP_ETHERSCAN_API_KEY
   },
 };
