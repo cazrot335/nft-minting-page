@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ethers } from 'ethers';
+const ethers = require("ethers");
+const BigNumber = require('ethers');
 
 import cryptoMayne from './cryptoMayne.json';
 
@@ -19,7 +20,7 @@ const MainMint = ({ accounts, setAccounts }) => {
                 signer
             );
             try {
-                const response = await contract.mint(ethers.BigNumber.from(mintAmount));
+                const response = await contract.mint(BigNumber.from(mintAmount));
             } catch (error) {
                 console.log("error", error)
             }
@@ -39,7 +40,7 @@ const MainMint = ({ accounts, setAccounts }) => {
     return (
         <div>
             <h1>cryptoMayne</h1>
-            <p>do kodika paisa nahi hai aur nft banayenge madarchod</p>
+            <p>do kodika paisa nahi hai aur NFT banayenge madarchod</p>
             {isConnected ? (
                 <div>
                     <div>
@@ -58,3 +59,4 @@ const MainMint = ({ accounts, setAccounts }) => {
 }
 
 export default MainMint;
+
