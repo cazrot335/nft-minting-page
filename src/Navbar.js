@@ -2,25 +2,29 @@
 import React from "react";
 import { Box, Button, Flex, Image, Link, Spacer } from '@chakra-ui/react';
 
+import styled from "styled-components";
 const NavBar = ({ accounts, setAccounts }) => {
   const isConnected = Boolean(accounts[0]);
 
   async function connectAccount() {
-    if (window.ethereum) {
-        console.log(window.ethereum)
-      try {
+    try {
+      if (window.ethereum) {
+        console.log("Ethereum provider detected:", window.ethereum);
+  
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
-        console.log(accounts);
+        
+        console.log("Connected accounts:", accounts);
         setAccounts(accounts);
-      } catch (error) {
-        console.error(error);
+      } else {
+        console.error("Ethereum provider (window.ethereum) not found.");
       }
-    } else {
-      console.error("Ethereum provider (window.ethereum) not found.");
+    } catch (error) {
+      console.error("Error connecting account:", error);
     }
   }
+  
 
   return (
     <Flex justify="space-between" align="center" padding="30px">
@@ -46,10 +50,21 @@ const NavBar = ({ accounts, setAccounts }) => {
       {isConnected ? (
         <p>Connected</p>
       ) : (
-        <Button onClick={connectAccount}>Connect</Button>
+        <Button className=" connect" 
+        backgroundColor={"#D6517D"}
+        borderRadius={"5px"}
+        boxShadow={"0px 2px 2px 1px #0F0F0F"}
+        color={"white"}
+        cursor={"pointer"}
+        fontFamily={"inherit"}
+        padding={"15px"}
+        margin={"0 15px"}
+        onClick={connectAccount}>Connect</Button>
       )}
     </Flex>
   );
 };
+
+
 
 export default NavBar;

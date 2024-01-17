@@ -1,6 +1,10 @@
+import { Container } from "@chakra-ui/react";
 import { useState } from "react";
+import { Box, Button, Flex, Text, Link, Spacer,Input } from '@chakra-ui/react';
 const ethers = require("ethers");
 const BigNumber = require('ethers');
+
+const styled = require('styled-components');
 
 const cryptoMayne =  require('./cryptoMayne.json');
 
@@ -38,25 +42,74 @@ const MainMint = ({ accounts, setAccounts }) => {
     };
 
     return (
-        <div>
-            <h1>cryptoMayne</h1>
-            <p>do kodika paisa nahi hai aur NFT banayenge madarchod</p>
-            {isConnected ? (
-                <div>
+        <Flex justify={"center"} align={"center"} height={"100vh"} paddingBottom={"150px"}>
+            <Box width={"520px"}>
+<div>
+<Text fontSize="48px" textShadow={"0 5px #000000"}>cryptoMayne</Text>
+            <Text fontSize={"30px"} letterSpacing={"-5.5%"}
+            fontFamily={"VT323"}
+            textShadow={"0 2px 2px #000000"}>Hi !! cryptoMayne is here to solve modern possesion issues</Text>
+           
+</div>
+            
+            <div>
                     <div>
-                        <button onClick={handleDecrement}>-</button>
-                        <input type="number" value={mintAmount} readOnly />
+                        <Button
+                         backgroundColor={"#D6517D"}
+                         borderRadius={"5px"}
+                         boxShadow={"0px 2px 2px 1px #0F0F0F"}
+                         color={"white"}
+                         cursor={"pointer"}
+                         fontFamily={"inherit"}
+                         padding={"15px"}
+                         marginTop={"15px"}
+                        className="decreament" onClick={handleDecrement}>-</Button>
+                        <Input 
+                       fontFamily={"inherit"}
+                       width={"100px"}
+                       height={"40px"}
+                       textAlign={"center"}
+                       paddingLeft={"19px"}
+                       marginTop={"10px"}
+                       type={"number"}
+        
 
-                        <button onClick={handleIncrement}>+</button>
+                        className="input"  value={mintAmount} readOnly />
+
+                        <Button
+                         backgroundColor={"#D6517D"}
+                         borderRadius={"5px"}
+                         boxShadow={"0px 2px 2px 1px #0F0F0F"}
+                         color={"white"}
+                         cursor={"pointer"}
+                         fontFamily={"inherit"}
+                         padding={"15px"}
+                        marginTop={"15px"}
+                        className="increament" onClick={handleIncrement}>+</Button>
                     </div>
-                    <button onClick={handleMint}>Mint Now</button>
+                    <Button 
+                     backgroundColor={"#D6517D"}
+                     borderRadius={"5px"}
+                     boxShadow={"0px 2px 2px 1px #0F0F0F"}
+                     color={"white"}
+                     cursor={"pointer"}
+                     fontFamily={"inherit"}
+                     padding={"15px"}
+                     margin={"0 15px"}
+                    className="mint" onClick={handleMint}>Mint Now</Button>
                 </div>
-            ) : (
-                <p>Tere Account Connect Nahi hai </p>
-            )}
-        </div>
+           
+               
+            
+                <p>PLease Connect Your account </p>
+            </Box>
+            
+           
+            
+        </Flex>
     )
 }
+
 
 export default MainMint;
 
