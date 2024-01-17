@@ -101,7 +101,7 @@ const MainMint = ({ accounts, setAccounts }) => {
            
                
             
-                <p>PLease Connect Your account </p>
+                
             </Box>
             
            
