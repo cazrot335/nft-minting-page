@@ -2,9 +2,9 @@ import { useState } from "react";
 const ethers = require("ethers");
 const BigNumber = require('ethers');
 
-import cryptoMayne from './cryptoMayne.json';
+const cryptoMayne =  require('./cryptoMayne.json');
 
-const cryptoMayneAddress = " "; // Replace this with the actual address
+const cryptoMayneAddress = "0xa7701898ec491EfA1C74a49Bdf63453Ab01f2C37 "; // Replace this with the actual address
 
 const MainMint = ({ accounts, setAccounts }) => {
     const [mintAmount, setMintAmount] = useState(1);
@@ -52,7 +52,7 @@ const MainMint = ({ accounts, setAccounts }) => {
                     <button onClick={handleMint}>Mint Now</button>
                 </div>
             ) : (
-                <p>NFT chaiye to tera account connect kar ! </p>
+                <p>Tere Account Connect Nahi hai </p>
             )}
         </div>
     )
