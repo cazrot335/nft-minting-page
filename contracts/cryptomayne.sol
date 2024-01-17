@@ -15,8 +15,8 @@ contract cryptomayne is ERC721 , Ownable{
     mapping(address => uint256) public walletMints;
 
         constructor() payable ERC721("cryptomayne", "CM") {
-        mintPrice = 0.05 ether;
-        maxSupply = 1000;
+        mintPrice = 0.005 ether;
+        maxSupply = 100;
         totalSupply = 0;
         maxPerwallet = 10;
         }

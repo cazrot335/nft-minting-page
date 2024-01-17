@@ -39,7 +39,7 @@ const MainMint = ({ accounts, setAccounts }) => {
     return (
         <div>
             <h1>cryptoMayne</h1>
-            <p>do kodika paisa nahi hai aur nft banayenge madarchod</p>
+            <p>do kodika paisa nahi hai aur NFT banayenge madarchod</p>
             {isConnected ? (
                 <div>
                     <div>
@@ -51,7 +51,7 @@ const MainMint = ({ accounts, setAccounts }) => {
                     <button onClick={handleMint}>Mint Now</button>
                 </div>
             ) : (
-                <p>Tere Account Connect Nahi hai </p>
+                <p>NFT chaiye to tera account connect kar ! </p>
             )}
         </div>
     )
